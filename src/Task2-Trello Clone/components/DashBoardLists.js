@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
-import config from '../config/config'
 import { MdArchive } from 'react-icons/md'
 
 function DashBoardLists({ list, getBoardsLists }) {
@@ -14,28 +13,40 @@ function DashBoardLists({ list, getBoardsLists }) {
   }
   const updateListName = async (e, listId) => {
     e.preventDefault()
-    setLoadingUpdate(true)
-    await axios.put(
-      `https://api.trello.com/1/lists/${listId}?key=${config.key}&token=${config.token}&name=${currentListName}`
-    )
-    const getLists = await axios.get(
-      `https://api.trello.com/1/boards/${list.idBoard}/lists?key=${config.key}&token=${config.token}`
-    )
-    getBoardsLists(getLists.data)
-    setLoadingUpdate(false)
+    try {
+      setLoadingUpdate(true)
+      await axios.put(
+        `https://api.trello.com/1/lists/${listId}?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}&name=${currentListName}`
+      )
+      const getLists = await axios.get(
+        `https://api.trello.com/1/boards/${list.idBoard}/lists?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
+      )
+      getBoardsLists(getLists.data)
+      setLoadingUpdate(false)
+    } catch (e) {
+      console.error(e)
+    }
   }
   const archiveList = async (listId) => {
-    await axios.put(
-      `https://api.trello.com/1/lists/${listId}/closed?key=${config.key}&token=${config.token}&value=true`
-    )
-    const getLists = await axios.get(
-      `https://api.trello.com/1/boards/${list.idBoard}/lists?key=${config.key}&token=${config.token}`
-    )
-    getBoardsLists(getLists.data)
+    try {
+      await axios.put(
+        `https://api.trello.com/1/lists/${listId}/closed?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}&value=true`
+      )
+      const getLists = await axios.get(
+        `https://api.trello.com/1/boards/${list.idBoard}/lists?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
+      )
+      getBoardsLists(getLists.data)
+    } catch (e) {
+      console.error(e)
+    }
   }
   const inputField = loadingUpdate ? (
     <div className="update-card-loading">
-      <img src="/loading.gif" />
+      <div className="lds-facebook">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   ) : (
     <input

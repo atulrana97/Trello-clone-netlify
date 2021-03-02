@@ -5,7 +5,7 @@ import axios from 'axios'
 // import { FaCheck } from 'react-icons/fa'
 import AddCard from '../components/AddCard'
 import AddList from '../components/AddList'
-import config from '../config/config'
+
 import DashBoardCard from '../components/DashBoardCard'
 import DashBoardLists from '../components/DashBoardLists'
 
@@ -20,26 +20,30 @@ function Dashboard() {
   const [checkBoardName, setBoardName] = useState(false)
 
   useEffect(() => {
-    const fetchData = async () => {
-      const getLists = await axios.get(
-        `https://api.trello.com/1/boards/${finalId}/lists?key=${config.key}&token=${config.token}`
-      )
+    try {
+      const fetchData = async () => {
+        const getLists = await axios.get(
+          `https://api.trello.com/1/boards/${finalId}/lists?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
+        )
 
-      const getCards = await axios.get(
-        `https://api.trello.com/1/boards/${finalId}/cards?key=${config.key}&token=${config.token}`
-      )
+        const getCards = await axios.get(
+          `https://api.trello.com/1/boards/${finalId}/cards?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
+        )
 
-      const getCurrentBoardName = await axios.get(
-        `https://api.trello.com/1/boards/${finalId}?key=${config.key}&token=${config.token}`
-      )
+        const getCurrentBoardName = await axios.get(
+          `https://api.trello.com/1/boards/${finalId}?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
+        )
 
-      setLoading(false)
-      setCurrentBoardName(getCurrentBoardName.data.name)
-      getCardsForList(getCards.data)
-      getBoardsLists(getLists.data)
-      setCurrentImage(getCurrentBoardName.data.prefs)
+        setLoading(false)
+        setCurrentBoardName(getCurrentBoardName.data.name)
+        getCardsForList(getCards.data)
+        getBoardsLists(getLists.data)
+        setCurrentImage(getCurrentBoardName.data.prefs)
+      }
+      fetchData()
+    } catch (e) {
+      console.error(e)
     }
-    fetchData()
   }, [])
 
   const handleBoardName = (e) => {
@@ -47,14 +51,18 @@ function Dashboard() {
   }
   const updateBoardName = async (e) => {
     e.preventDefault()
-    await axios.put(
-      `https://api.trello.com/1/boards/${finalId}?key=${config.key}&token=${config.token}&name=${currentBoardName}`
-    )
-    const getCurrentBoardName = await axios.get(
-      `https://api.trello.com/1/boards/${finalId}?key=${config.key}&token=${config.token}`
-    )
-    setCurrentBoardName(getCurrentBoardName.data.name)
-    setBoardName(false)
+    try {
+      await axios.put(
+        `https://api.trello.com/1/boards/${finalId}?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}&name=${currentBoardName}`
+      )
+      const getCurrentBoardName = await axios.get(
+        `https://api.trello.com/1/boards/${finalId}?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
+      )
+      setCurrentBoardName(getCurrentBoardName.data.name)
+      setBoardName(false)
+    } catch (e) {
+      console.error(e)
+    }
   }
   const changeBoardState = () => {
     if (checkBoardName === true) {
@@ -99,7 +107,16 @@ function Dashboard() {
   if (loading) {
     return (
       <div className="loading" data-testid="loading">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" />
+        <div className="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     )
   }

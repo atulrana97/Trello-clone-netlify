@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.94% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/29</span>
+                <span class='fraction'>31/33</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.94% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>29/29</span>
+                <span class='fraction'>31/33</span>
             </div>
         
             
@@ -246,8 +246,22 @@
 <a name='L187'></a><a href='#L187'>187</a>
 <a name='L188'></a><a href='#L188'>188</a>
 <a name='L189'></a><a href='#L189'>189</a>
-<a name='L190'></a><a href='#L190'>190</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -269,6 +283,7 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -278,6 +293,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -288,22 +306,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -438,7 +468,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 import Card from '../components/Card'
-import config from '../config/config'
 import {
   IoPersonOutline,
   IoPeopleSharp,
@@ -458,15 +487,19 @@ function HomePage({ currentSearch }) {
   const [loading, setLoadingState] = useState(true)
   const formStyling = useRef(null)
   useEffect(() =&gt; {
-    const fetch = async () =&gt; {
-      const getHomePageData = await axios.get(
-        `https://api.trello.com/1/members/me/boards?key=${config.key}&amp;token=${config.token}`
-      )
-      setLoadingState(false)
-      setHomePageData(getHomePageData.data)
-    }
+    try {
+      const fetch = async () =&gt; {
+        const getHomePageData = await axios.get(
+          `https://api.trello.com/1/members/me/boards?key=${process.env.REACT_APP_KEY}&amp;token=${process.env.REACT_APP_TOKEN}`
+        )
+        setLoadingState(false)
+        setHomePageData(getHomePageData.data)
+      }
 &nbsp;
-    fetch()
+      fetch()
+    } catch (e) {
+<span class="cstat-no" title="statement not covered" >      console.error(e)</span>
+    }
   }, [])
   const openForm = () =&gt; {
     if (formStyling.current.style.display === 'block') {
@@ -477,16 +510,19 @@ function HomePage({ currentSearch }) {
   }
   const createNewBoard = async (e) =&gt; {
     e.preventDefault()
-&nbsp;
-    await axios.post(
-      `https://api.trello.com/1/boards/?key=${config.key}&amp;token=${config.token}&amp;name=${newBoardName}`
-    )
-    const updatedBoards = await axios.get(
-      `https://api.trello.com/1/members/me/boards?key=${config.key}&amp;token=${config.token}`
-    )
-    setBoardName('')
-    setHomePageData(updatedBoards.data)
-    openForm()
+    try {
+      await axios.post(
+        `https://api.trello.com/1/boards/?key=${process.env.REACT_APP_KEY}&amp;token=${process.env.TOKEN}&amp;name=${newBoardName}`
+      )
+      const updatedBoards = await axios.get(
+        `https://api.trello.com/1/members/me/boards?key=${process.env.REACT_APP_KEY}&amp;token=${process.env.REACT_APP_TOKEN}`
+      )
+      setBoardName('')
+      setHomePageData(updatedBoards.data)
+      openForm()
+    } catch (e) {
+<span class="cstat-no" title="statement not covered" >      console.error(e)</span>
+    }
   }
   const handleBoardName = (e) =&gt; {
     setBoardName(e.target.value)
@@ -494,7 +530,16 @@ function HomePage({ currentSearch }) {
   if (loading) {
     return (
       &lt;div className="loading"&gt;
-        &lt;img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" /&gt;
+        &lt;div className="lds-roller"&gt;
+          &lt;div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;/div&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
     )
   }
@@ -631,7 +676,7 @@ export default HomePage
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Mar 02 2021 12:16:36 GMT+0530 (India Standard Time)
+                at Tue Mar 02 2021 22:17:52 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

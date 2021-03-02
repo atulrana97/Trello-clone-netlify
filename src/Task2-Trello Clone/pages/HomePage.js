@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 import Card from '../components/Card'
-import config from '../config/config'
 import {
   IoPersonOutline,
   IoPeopleSharp,
@@ -21,15 +20,19 @@ function HomePage({ currentSearch }) {
   const [loading, setLoadingState] = useState(true)
   const formStyling = useRef(null)
   useEffect(() => {
-    const fetch = async () => {
-      const getHomePageData = await axios.get(
-        `https://api.trello.com/1/members/me/boards?key=${config.key}&token=${config.token}`
-      )
-      setLoadingState(false)
-      setHomePageData(getHomePageData.data)
-    }
+    try {
+      const fetch = async () => {
+        const getHomePageData = await axios.get(
+          `https://api.trello.com/1/members/me/boards?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
+        )
+        setLoadingState(false)
+        setHomePageData(getHomePageData.data)
+      }
 
-    fetch()
+      fetch()
+    } catch (e) {
+      console.error(e)
+    }
   }, [])
   const openForm = () => {
     if (formStyling.current.style.display === 'block') {
@@ -40,16 +43,19 @@ function HomePage({ currentSearch }) {
   }
   const createNewBoard = async (e) => {
     e.preventDefault()
-
-    await axios.post(
-      `https://api.trello.com/1/boards/?key=${config.key}&token=${config.token}&name=${newBoardName}`
-    )
-    const updatedBoards = await axios.get(
-      `https://api.trello.com/1/members/me/boards?key=${config.key}&token=${config.token}`
-    )
-    setBoardName('')
-    setHomePageData(updatedBoards.data)
-    openForm()
+    try {
+      await axios.post(
+        `https://api.trello.com/1/boards/?key=${process.env.REACT_APP_KEY}&token=${process.env.TOKEN}&name=${newBoardName}`
+      )
+      const updatedBoards = await axios.get(
+        `https://api.trello.com/1/members/me/boards?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
+      )
+      setBoardName('')
+      setHomePageData(updatedBoards.data)
+      openForm()
+    } catch (e) {
+      console.error(e)
+    }
   }
   const handleBoardName = (e) => {
     setBoardName(e.target.value)
@@ -57,7 +63,16 @@ function HomePage({ currentSearch }) {
   if (loading) {
     return (
       <div className="loading">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" />
+        <div className="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     )
   }

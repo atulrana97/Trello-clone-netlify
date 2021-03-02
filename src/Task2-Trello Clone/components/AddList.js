@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react'
 import axios from 'axios'
-import config from '../config/config'
 import PropTypes from 'prop-types'
 
 function AddList({ boardId, getBoardsLists }) {
@@ -10,15 +9,19 @@ function AddList({ boardId, getBoardsLists }) {
     setListName(e.target.value)
   }
   const addNewList = async (e) => {
-    e.preventDefault()
-    await axios.post(
-      `https://api.trello.com/1/lists?key=${config.key}&token=${config.token}&name=${newListName}&idBoard=${boardId}`
-    )
-    const getLists = await axios.get(
-      `https://api.trello.com/1/boards/${boardId}/lists?key=${config.key}&token=${config.token}`
-    )
-    getBoardsLists(getLists.data)
-    openForm()
+    try {
+      e.preventDefault()
+      await axios.post(
+        `https://api.trello.com/1/lists?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}&name=${newListName}&idBoard=${boardId}`
+      )
+      const getLists = await axios.get(
+        `https://api.trello.com/1/boards/${boardId}/lists?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
+      )
+      getBoardsLists(getLists.data)
+      openForm()
+    } catch (e) {
+      console.error(e)
+    }
   }
   const openForm = () => {
     if (formStyling.current.style.display === 'flex') {

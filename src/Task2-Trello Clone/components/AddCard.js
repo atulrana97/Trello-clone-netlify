@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react'
 import axios from 'axios'
-import config from '../config/config'
 import PropTypes from 'prop-types'
 
 function AddCard({ listId, boardId, getCardsForList }) {
@@ -10,17 +9,21 @@ function AddCard({ listId, boardId, getCardsForList }) {
     setCardName(e.target.value)
   }
   const addNewCard = async (e) => {
-    e.preventDefault()
-    if (newCardName !== '') {
-      await axios.post(
-        `https://api.trello.com/1/cards?key=${config.key}&token=${config.token}&idList=${listId}&name=${newCardName}`
-      )
-      const getCards = await axios.get(
-        `https://api.trello.com/1/boards/${boardId}/cards?key=${config.key}&token=${config.token}`
-      )
-      getCardsForList(getCards.data)
-      setCardName('')
-      openForm()
+    try {
+      e.preventDefault()
+      if (newCardName !== '') {
+        await axios.post(
+          `https://api.trello.com/1/cards?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}&idList=${listId}&name=${newCardName}`
+        )
+        const getCards = await axios.get(
+          `https://api.trello.com/1/boards/${boardId}/cards?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
+        )
+        getCardsForList(getCards.data)
+        setCardName('')
+        openForm()
+      }
+    } catch (e) {
+      console.error(e)
     }
   }
   const openForm = () => {

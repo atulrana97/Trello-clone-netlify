@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:coverage": "react-scripts test --watchAll=false --coverage --detectOpenHandles"
+    "test:coverage": "react-scripts test --watchAll=false --coverage"
   },
   "browserslist": {
     "production": [

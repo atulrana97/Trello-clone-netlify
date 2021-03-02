@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1614667596490" clover="3.2.0">
-  <project timestamp="1614667596490" name="All files">
-    <metrics statements="200" coveredstatements="196" conditionals="30" coveredconditionals="28" methods="59" coveredmethods="57" elements="289" coveredelements="281" complexity="0" loc="200" ncloc="200" packages="6" files="12" classes="12"/>
+<coverage generated="1614703672613" clover="3.2.0">
+  <project timestamp="1614703672614" name="All files">
+    <metrics statements="222" coveredstatements="212" conditionals="32" coveredconditionals="32" methods="60" coveredmethods="60" elements="314" coveredelements="304" complexity="0" loc="222" ncloc="222" packages="5" files="11" classes="11"/>
     <package name="src">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="App.js" path="/home/raramuri/Documents/task3-NewBranch Repo clone/groot/atul/react_tasks/src/App.js">
@@ -18,14 +18,15 @@
       </file>
     </package>
     <package name="src.Task2-Trello Clone.components">
-      <metrics statements="97" coveredstatements="93" conditionals="12" coveredconditionals="10" methods="30" coveredmethods="28"/>
+      <metrics statements="112" coveredstatements="106" conditionals="14" coveredconditionals="14" methods="31" coveredmethods="31"/>
       <file name="AddCard.js" path="/home/raramuri/Documents/task3-NewBranch Repo clone/groot/atul/react_tasks/src/Task2-Trello Clone/components/AddCard.js">
-        <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+        <metrics statements="20" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+        <line num="6" count="16" type="stmt"/>
         <line num="7" count="16" type="stmt"/>
         <line num="8" count="16" type="stmt"/>
-        <line num="9" count="16" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="12" count="16" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="16" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
         <line num="14" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="15" count="1" type="stmt"/>
@@ -33,96 +34,110 @@
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
-        <line num="26" count="16" type="stmt"/>
-        <line num="27" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="33" count="16" type="stmt"/>
-        <line num="63" count="3" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="16" type="stmt"/>
+        <line num="30" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="36" count="16" type="stmt"/>
+        <line num="66" count="3" type="stmt"/>
       </file>
       <file name="AddList.js" path="/home/raramuri/Documents/task3-NewBranch Repo clone/groot/atul/react_tasks/src/Task2-Trello Clone/components/AddList.js">
-        <metrics statements="17" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <metrics statements="19" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="6" count="25" type="stmt"/>
         <line num="7" count="25" type="stmt"/>
         <line num="8" count="25" type="stmt"/>
-        <line num="9" count="25" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="12" count="25" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="25" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
-        <line num="23" count="25" type="stmt"/>
-        <line num="24" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="25" count="2" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="25" type="stmt"/>
+        <line num="27" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="28" count="2" type="stmt"/>
-        <line num="31" count="25" type="stmt"/>
-        <line num="63" count="3" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="34" count="25" type="stmt"/>
+        <line num="66" count="3" type="stmt"/>
       </file>
       <file name="Card.js" path="/home/raramuri/Documents/task3-NewBranch Repo clone/groot/atul/react_tasks/src/Task2-Trello Clone/components/Card.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="22" count="6" type="stmt"/>
-        <line num="58" count="2" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
       </file>
       <file name="DashBoardCard.js" path="/home/raramuri/Documents/task3-NewBranch Repo clone/groot/atul/react_tasks/src/Task2-Trello Clone/components/DashBoardCard.js">
-        <metrics statements="28" coveredstatements="24" conditionals="4" coveredconditionals="2" methods="9" coveredmethods="7"/>
-        <line num="9" count="17" type="stmt"/>
-        <line num="10" count="17" type="stmt"/>
-        <line num="12" count="17" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <metrics statements="35" coveredstatements="33" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="10"/>
+        <line num="9" count="28" type="stmt"/>
+        <line num="10" count="28" type="stmt"/>
+        <line num="11" count="28" type="stmt"/>
+        <line num="13" count="28" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="23" count="17" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="36" count="17" type="stmt"/>
-        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="42" count="17" type="cond" truecount="2" falsecount="0"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="56" count="17" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
-        <line num="59" count="17" type="stmt"/>
-        <line num="67" count="1" type="stmt"/>
-        <line num="79" count="1" type="stmt"/>
-        <line num="88" count="3" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="28" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="46" count="28" type="stmt"/>
+        <line num="47" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="53" count="28" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
+        <line num="56" count="28" type="cond" truecount="2" falsecount="0"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="70" count="3" type="stmt"/>
+        <line num="81" count="28" type="stmt"/>
+        <line num="88" count="4" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="114" count="3" type="stmt"/>
       </file>
       <file name="DashBoardLists.js" path="/home/raramuri/Documents/task3-NewBranch Repo clone/groot/atul/react_tasks/src/Task2-Trello Clone/components/DashBoardLists.js">
-        <metrics statements="21" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
-        <line num="8" count="17" type="stmt"/>
-        <line num="10" count="17" type="stmt"/>
-        <line num="12" count="17" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="17" type="stmt"/>
+        <metrics statements="25" coveredstatements="23" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
+        <line num="7" count="17" type="stmt"/>
+        <line num="9" count="17" type="stmt"/>
+        <line num="11" count="17" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="17" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
-        <line num="27" count="17" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="30" count="17" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="36" count="17" type="cond" truecount="2" falsecount="0"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="50" count="17" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
-        <line num="76" count="3" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="43" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="61" count="17" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="87" count="3" type="stmt"/>
       </file>
       <file name="NavBar.js" path="/home/raramuri/Documents/task3-NewBranch Repo clone/groot/atul/react_tasks/src/Task2-Trello Clone/components/NavBar.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
@@ -135,17 +150,10 @@
         <line num="63" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="src.Task2-Trello Clone.config">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="config.js" path="/home/raramuri/Documents/task3-NewBranch Repo clone/groot/atul/react_tasks/src/Task2-Trello Clone/config/config.js">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="7" type="stmt"/>
-      </file>
-    </package>
     <package name="src.Task2-Trello Clone.pages">
-      <metrics statements="68" coveredstatements="68" conditionals="12" coveredconditionals="12" methods="16" coveredmethods="16"/>
+      <metrics statements="76" coveredstatements="72" conditionals="12" coveredconditionals="12" methods="16" coveredmethods="16"/>
       <file name="Dashboard.js" path="/home/raramuri/Documents/task3-NewBranch Repo clone/groot/atul/react_tasks/src/Task2-Trello Clone/pages/Dashboard.js">
-        <metrics statements="39" coveredstatements="39" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="8"/>
+        <metrics statements="43" coveredstatements="41" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="8"/>
         <line num="13" count="24" type="stmt"/>
         <line num="15" count="24" type="stmt"/>
         <line num="16" count="24" type="stmt"/>
@@ -156,67 +164,75 @@
         <line num="22" count="24" type="stmt"/>
         <line num="23" count="3" type="stmt"/>
         <line num="24" count="3" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
-        <line num="36" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
         <line num="37" count="3" type="stmt"/>
         <line num="38" count="3" type="stmt"/>
         <line num="39" count="3" type="stmt"/>
         <line num="40" count="3" type="stmt"/>
-        <line num="42" count="3" type="stmt"/>
-        <line num="45" count="24" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="48" count="24" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="49" count="24" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
+        <line num="52" count="24" type="stmt"/>
         <line num="53" count="1" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
-        <line num="59" count="24" type="stmt"/>
-        <line num="60" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
         <line num="61" count="1" type="stmt"/>
-        <line num="63" count="2" type="stmt"/>
-        <line num="67" count="24" type="cond" truecount="2" falsecount="0"/>
-        <line num="91" count="24" type="stmt"/>
-        <line num="99" count="24" type="cond" truecount="2" falsecount="0"/>
-        <line num="100" count="3" type="stmt"/>
-        <line num="106" count="21" type="stmt"/>
-        <line num="115" count="12" type="stmt"/>
-        <line num="120" count="12" type="cond" truecount="2" falsecount="0"/>
-        <line num="121" count="10" type="stmt"/>
-        <line num="130" count="2" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="67" count="24" type="stmt"/>
+        <line num="68" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="71" count="2" type="stmt"/>
+        <line num="75" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="99" count="24" type="stmt"/>
+        <line num="107" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="108" count="3" type="stmt"/>
+        <line num="123" count="21" type="stmt"/>
+        <line num="132" count="12" type="stmt"/>
+        <line num="137" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="138" count="10" type="stmt"/>
+        <line num="147" count="2" type="stmt"/>
       </file>
       <file name="HomePage.js" path="/home/raramuri/Documents/task3-NewBranch Repo clone/groot/atul/react_tasks/src/Task2-Trello Clone/pages/HomePage.js">
-        <metrics statements="29" coveredstatements="29" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="8"/>
+        <metrics statements="33" coveredstatements="31" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="8"/>
+        <line num="18" count="16" type="stmt"/>
         <line num="19" count="16" type="stmt"/>
         <line num="20" count="16" type="stmt"/>
         <line num="21" count="16" type="stmt"/>
         <line num="22" count="16" type="stmt"/>
-        <line num="23" count="16" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
         <line num="24" count="5" type="stmt"/>
         <line num="25" count="5" type="stmt"/>
         <line num="28" count="4" type="stmt"/>
         <line num="29" count="4" type="stmt"/>
         <line num="32" count="5" type="stmt"/>
-        <line num="34" count="16" type="stmt"/>
-        <line num="35" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="36" count="2" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="41" count="16" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="16" type="stmt"/>
+        <line num="38" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="44" count="16" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="54" count="16" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
         <line num="55" count="1" type="stmt"/>
-        <line num="57" count="16" type="cond" truecount="2" falsecount="0"/>
-        <line num="58" count="5" type="stmt"/>
-        <line num="64" count="11" type="stmt"/>
-        <line num="140" count="7" type="stmt"/>
-        <line num="143" count="7" type="stmt"/>
-        <line num="186" count="2" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="60" count="16" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="63" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="64" count="5" type="stmt"/>
+        <line num="79" count="11" type="stmt"/>
+        <line num="155" count="7" type="stmt"/>
+        <line num="158" count="7" type="stmt"/>
+        <line num="201" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.task1-ToDoList">

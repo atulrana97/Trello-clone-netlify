@@ -4,16 +4,15 @@ import '../task2.css'
 import { AiFillDelete } from 'react-icons/ai'
 // import { GrUpdate } from 'react-icons/gr'
 import axios from 'axios'
-import config from '../config/config'
 import { Link } from 'react-router-dom'
 
 function Card({ value, setHomePageData }) {
   const deleteBoardCard = async () => {
     await axios.delete(
-      `https://api.trello.com/1/boards/${value.id}?key=${config.key}&token=${config.token}`
+      `https://api.trello.com/1/boards/${value.id}?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
     )
     const getBoards = await axios.get(
-      `https://api.trello.com/1/members/me/boards?key=${config.key}&token=${config.token}`
+      `https://api.trello.com/1/members/me/boards?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
     )
 
     setHomePageData(getBoards.data)
