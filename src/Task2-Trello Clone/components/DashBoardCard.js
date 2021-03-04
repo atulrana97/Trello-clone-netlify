@@ -4,11 +4,13 @@ import axios from 'axios'
 
 import PropTypes from 'prop-types'
 import '../task2.css'
+import LoaderSecondary from './LoaderSecondary'
 
 function DashBoardCard({ card, getCardsForList, boardId }) {
   const [currentCardName, updateCurrentCard] = useState(card.name)
   const [loadingUpdate, setLoadingUpdate] = useState(false)
   const [cardState, setCardState] = useState(true)
+  const [error, setErrorState] = useState('')
 
   const deleteCard = async (cardId) => {
     try {
@@ -22,7 +24,7 @@ function DashBoardCard({ card, getCardsForList, boardId }) {
       getCardsForList(getCards.data)
       setLoadingUpdate(false)
     } catch (e) {
-      console.error(e)
+      setErrorState('Oops Something Went Wrong')
     }
   }
   const updateCard = async (e, cardId) => {
@@ -40,7 +42,7 @@ function DashBoardCard({ card, getCardsForList, boardId }) {
       setCardState(true)
       getCardsForList(getCards.data)
     } catch (e) {
-      console.error(e)
+      setErrorState('Oops Something Went Wrong')
     }
   }
   const handleKeyDown = (e, cardId) => {
@@ -78,6 +80,9 @@ function DashBoardCard({ card, getCardsForList, boardId }) {
       />
     </form>
   )
+  if (error !== '') {
+    return <div data-testid={error}></div>
+  }
   return (
     <div>
       <div className="cards" key={card.id}>
@@ -88,17 +93,7 @@ function DashBoardCard({ card, getCardsForList, boardId }) {
               setCardState(false)
             }}
           >
-            {loadingUpdate ? (
-              <div className="update-card-loading">
-                <div className="lds-facebook">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
-            ) : (
-              cardData
-            )}
+            {loadingUpdate ? <LoaderSecondary /> : cardData}
           </div>
         </div>
         <div className="card-icons">

@@ -204,4 +204,75 @@ describe('<DashBoardCard />', () => {
     })
     expect(spy).toHaveBeenCalledTimes(0)
   })
+  it('should check if error occurred while deleting card', async () => {
+    act(() => {
+      axios.delete.mockImplementation(() => {
+        return Promise.reject(new Error('Oops Something Went Wrong'))
+      })
+      const cardData = {
+        data: [
+          {
+            id: '1',
+            name: 'newone'
+          }
+        ]
+      }
+      axios.get.mockImplementation(() => Promise.resolve(cardData))
+    })
+    const deleteIcon = await waitFor(() => screen.getByTestId('deleteIcon'), {
+      timeout: 3000
+    })
+    expect(deleteIcon).toBeInTheDocument()
+    await act(async () => {
+      fireEvent.click(deleteIcon)
+    })
+    expect(screen.getByTestId('Oops Something Went Wrong')).toBeInTheDocument()
+  })
+  it('should check if any error occurred while the card is updated', async () => {
+    act(() => {
+      axios.put.mockImplementation(() => {
+        return Promise.reject(new Error('Oops Something Went Wrong'))
+      })
+      act(() => {
+        const cardData = {
+          data: [
+            {
+              id: '1',
+              name: 'newone'
+            }
+          ]
+        }
+        axios.get.mockImplementation(() => Promise.resolve(cardData))
+      })
+    })
+    const openForm = await waitFor(
+      () => screen.getByTestId('makeCardEditable'),
+      {
+        timeout: 3000
+      }
+    )
+    await act(async () => {
+      fireEvent.click(openForm)
+    })
+    const updateCardName = await waitFor(
+      () => screen.getByTestId('updateCardInputField'),
+      {
+        timeout: 3000
+      }
+    )
+    expect(updateCardName).toBeInTheDocument()
+
+    await act(async () => {
+      fireEvent.change(updateCardName, { target: { value: 'New Name' } })
+    })
+
+    await act(async () => {
+      fireEvent.keyDown(updateCardName, {
+        key: 'Enter',
+        code: 13,
+        charCode: 13
+      })
+    })
+    expect(screen.getByTestId('Oops Something Went Wrong')).toBeInTheDocument()
+  })
 })

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import HomePage from './pages/HomePage'
 import NavBar from './components/NavBar'
+import StartupPage from './pages/StartupPage'
 
 function Main() {
   const [currentSearch, setCurrentSearch] = useState('')
@@ -14,9 +15,12 @@ function Main() {
       <NavBar setCurrentSearch={setCurrentSearch} />
       <Switch>
         <Route exact path="/">
+          <StartupPage />
+        </Route>
+        <Route exact path="/boards">
           <HomePage currentSearch={currentSearch} />
         </Route>
-        <Route path="/dashBoard/:finalId" component={Dashboard}></Route>
+        <Route exact path="/boards/:finalId" component={Dashboard}></Route>
       </Switch>
     </Router>
   )

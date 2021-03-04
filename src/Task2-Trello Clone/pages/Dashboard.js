@@ -8,6 +8,7 @@ import AddList from '../components/AddList'
 
 import DashBoardCard from '../components/DashBoardCard'
 import DashBoardLists from '../components/DashBoardLists'
+import LoaderMain from '../components/LoaderMain'
 
 function Dashboard() {
   const { finalId } = useParams()
@@ -18,14 +19,14 @@ function Dashboard() {
   const [currentBackgroundImage, setCurrentImage] = useState({})
   const [loading, setLoading] = useState(true)
   const [checkBoardName, setBoardName] = useState(false)
+  const [error, setErrorState] = useState('')
 
   useEffect(() => {
-    try {
-      const fetchData = async () => {
+    const fetchData = async () => {
+      try {
         const getLists = await axios.get(
           `https://api.trello.com/1/boards/${finalId}/lists?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
         )
-
         const getCards = await axios.get(
           `https://api.trello.com/1/boards/${finalId}/cards?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
         )
@@ -39,11 +40,12 @@ function Dashboard() {
         getCardsForList(getCards.data)
         getBoardsLists(getLists.data)
         setCurrentImage(getCurrentBoardName.data.prefs)
+      } catch {
+        setLoading(false)
+        setErrorState('Oops Something Went Wrong')
       }
-      fetchData()
-    } catch (e) {
-      console.error(e)
     }
+    fetchData()
   }, [])
 
   const handleBoardName = (e) => {
@@ -52,6 +54,7 @@ function Dashboard() {
   const updateBoardName = async (e) => {
     e.preventDefault()
     try {
+      setLoading(true)
       await axios.put(
         `https://api.trello.com/1/boards/${finalId}?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}&name=${currentBoardName}`
       )
@@ -60,8 +63,9 @@ function Dashboard() {
       )
       setCurrentBoardName(getCurrentBoardName.data.name)
       setBoardName(false)
+      setLoading(false)
     } catch (e) {
-      console.error(e)
+      setErrorState('Oops Something Went Wrong')
     }
   }
   const changeBoardState = () => {
@@ -104,21 +108,10 @@ function Dashboard() {
     backgroundColor: `${currentBackgroundImage.backgroundColor}`
   }
 
-  if (loading) {
-    return (
-      <div className="loading" data-testid="loading">
-        <div className="lds-roller">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-    )
+  if (loading && error === '') {
+    return <LoaderMain />
+  } else if (error !== '') {
+    return <div data-testid={error}>Something went wrong</div>
   }
   return (
     <div

@@ -229,6 +229,7 @@ body {
   margin-right: 0.5rem;
   color: white;
 }
+
 .update-card-loading img {
   height: 4rem;
   width: 4rem;
@@ -266,6 +267,7 @@ body {
 .update-card {
   display: flex;
   flex-direction: row;
+  max-width: 17rem;
 }
 
 .homepage-card:hover {
@@ -282,6 +284,7 @@ body {
   justify-content: space-between;
   margin-top: 0;
   background-color: #027ac0;
+  cursor: pointer;
 }
 .navbar img {
   height: 3rem;
@@ -317,13 +320,15 @@ body {
   align-items: center;
   margin: 0.2rem 0.5rem;
   background-color: #ebecf0;
-  min-width: 10rem;
+  min-width: 15rem;
   min-height: 3rem;
   color: #172b4d;
   border-radius: 0.5rem;
 }
 .board-list-name input[type='text'] {
   display: flex;
+  width: 18rem;
+  height: 1rem;
   justify-content: center;
   padding-left: 0.5rem;
   font-size: 0.875rem;
@@ -404,10 +409,9 @@ body {
   min-width: 9.5rem;
   width: 17.469rem;
   margin: 0.5rem;
-  padding: 0.3rem;
+
   background-color: #f0f2f4;
   border-radius: 0.4rem;
-  margin-top: 1rem;
   cursor: pointer;
   font-size: 0.5rem;
   color: #172b4d;
@@ -507,6 +511,48 @@ body {
 }
 .board-list-name input[type='submit'] {
   display: none;
+}
+.update-card-options {
+  display: flex;
+}
+.update-card-options input[type='submit'] {
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.update-card-options svg {
+  color: gray;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-left: 0.225rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.update-card-options svg:hover {
+  color: rgb(250, 108, 108);
+}
+
+.update-list-options {
+  display: flex;
+}
+.update-list-options input[type='submit'] {
+  margin-top: 0.7rem;
+  margin-bottom: 0.2rem;
+  height: 3rem;
+  width: 10rem;
+}
+.update-list-options svg {
+  color: white;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-left: 0.225rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+.update-list-options svg.board {
+  margin-top: 0.6rem;
+}
+.update-list-options svg:hover {
+  color: rgb(250, 108, 108);
 }
 
 .update-card-button {
@@ -759,6 +805,11 @@ body {
   .drop-down {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+  }
+  .drop-down:hover {
+    background-color: #e4f0f6;
+    border-radius: 1rem;
   }
   .drop-down-items {
     display: flex;
@@ -778,9 +829,9 @@ body {
     width: 1rem;
   }
   .drop-down svg {
-    margin-top: 0.5rem;
-    height: 1.5rem;
-    width: 1.5rem;
+    margin-top: 0.3rem;
+    height: 2rem;
+    width: 2rem;
   }
   .drop-down-header {
     display: flex;

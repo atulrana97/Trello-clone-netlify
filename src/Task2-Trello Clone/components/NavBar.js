@@ -11,8 +11,9 @@ import PropTypes from 'prop-types'
 
 function NavBar({ currentSearch, setCurrentSearch }) {
   const history = useHistory()
-  function handleClick() {
-    history.push('/')
+  const handleClick = ({ name }) => {
+    if (name === 'boards') history.push('/boards')
+    if (name === 'home') history.push('/')
   }
   const handleChange = async (e) => {
     setCurrentSearch(e.target.value)
@@ -23,10 +24,18 @@ function NavBar({ currentSearch, setCurrentSearch }) {
         <div className="navbar-left-setting">
           <RiDashboardLine />
         </div>
-        <div className="navbar-left-home">
+        <div
+          className="navbar-left-home"
+          data-testid="navbarHome"
+          onClick={() => handleClick({ name: 'home' })}
+        >
           <BiHomeAlt />
         </div>
-        <div className="navbar-left-board">
+        <div
+          className="navbar-left-board"
+          data-testid="navbarBoards"
+          onClick={() => handleClick({ name: 'boards' })}
+        >
           <DiTrello />
           <h1>Boards</h1>
         </div>
@@ -43,7 +52,7 @@ function NavBar({ currentSearch, setCurrentSearch }) {
       </div>
       <img
         src="/images/trello2.png"
-        onClick={handleClick}
+        onClick={() => handleClick({ name: 'boards' })}
         data-testid="navBarHomeLink"
       ></img>
       <div className="navbar-right">

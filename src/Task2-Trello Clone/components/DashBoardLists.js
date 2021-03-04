@@ -2,18 +2,19 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import { MdArchive } from 'react-icons/md'
+import LoaderSecondary from './LoaderSecondary'
 
 function DashBoardLists({ list, getBoardsLists }) {
   const [currentListName, setCurrentListName] = useState(list.name)
-
+  const [error, setErrorState] = useState('')
   const [loadingUpdate, setLoadingUpdate] = useState(false)
 
   const listChangeHandler = (e) => {
     setCurrentListName(e.target.value)
   }
   const updateListName = async (e, listId) => {
-    e.preventDefault()
     try {
+      e.preventDefault()
       setLoadingUpdate(true)
       await axios.put(
         `https://api.trello.com/1/lists/${listId}?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}&name=${currentListName}`
@@ -24,30 +25,26 @@ function DashBoardLists({ list, getBoardsLists }) {
       getBoardsLists(getLists.data)
       setLoadingUpdate(false)
     } catch (e) {
-      console.error(e)
+      setErrorState('Oops Something Went Wrong')
     }
   }
   const archiveList = async (listId) => {
     try {
+      setLoadingUpdate(true)
       await axios.put(
         `https://api.trello.com/1/lists/${listId}/closed?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}&value=true`
       )
       const getLists = await axios.get(
         `https://api.trello.com/1/boards/${list.idBoard}/lists?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
       )
+      setLoadingUpdate(false)
       getBoardsLists(getLists.data)
     } catch (e) {
-      console.error(e)
+      setErrorState('Oops Something Went Wrong')
     }
   }
   const inputField = loadingUpdate ? (
-    <div className="update-card-loading">
-      <div className="lds-facebook">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+    <LoaderSecondary />
   ) : (
     <input
       type="text"
@@ -58,6 +55,9 @@ function DashBoardLists({ list, getBoardsLists }) {
       }}
     />
   )
+  if (error !== '') {
+    return <div data-testid={error}></div>
+  }
   return (
     <div className="list-name-container">
       <div className="board-list-name" data-testid="openListForm">

@@ -1,20 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import '../task2.css'
 import { AiFillDelete } from 'react-icons/ai'
 // import { GrUpdate } from 'react-icons/gr'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import LoaderMain from './LoaderMain'
 
 function Card({ value, setHomePageData }) {
+  const [loading, setLoading] = useState(false)
   const deleteBoardCard = async () => {
+    setLoading(true)
     await axios.delete(
       `https://api.trello.com/1/boards/${value.id}?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
     )
     const getBoards = await axios.get(
       `https://api.trello.com/1/members/me/boards?key=${process.env.REACT_APP_KEY}&token=${process.env.REACT_APP_TOKEN}`
     )
-
+    setLoading(false)
     setHomePageData(getBoards.data)
   }
 
@@ -31,16 +34,20 @@ function Card({ value, setHomePageData }) {
     >
       <Link
         key={value.id}
-        to={`/dashBoard/${value.id}`}
+        to={`/boards/${value.id}`}
         style={{ textDecoration: 'none', width: '100%' }}
       >
-        <div>
+        {loading ? (
+          <LoaderMain />
+        ) : (
           <div>
-            <div className="homepage-card-data">
-              <h1 data-testid="newBoardName">{value.name}</h1>
+            <div>
+              <div className="homepage-card-data">
+                <h1 data-testid="newBoardName">{value.name}</h1>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </Link>
       <div className="delete-icon-container">
         <AiFillDelete
