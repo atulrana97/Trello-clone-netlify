@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import React, { useState } from "react";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 // import NavBar from './components/NavBar'
 
-import Dashboard from './pages/Dashboard'
-import HomePage from './pages/HomePage'
-import NavBar from './components/NavBar'
-import StartupPage from './pages/StartupPage'
+import Dashboard from "./pages/Dashboard";
+import HomePage from "./pages/HomePage";
+import NavBar from "./components/NavBar";
+import StartupPage from "./pages/StartupPage";
 
 function Main() {
-  const [currentSearch, setCurrentSearch] = useState('')
+  const [currentSearch, setCurrentSearch] = useState("");
   return (
     <Router>
       <NavBar setCurrentSearch={setCurrentSearch} />
@@ -23,6 +23,6 @@ function Main() {
         <Route exact path="/boards/:finalId" component={Dashboard}></Route>
       </Switch>
     </Router>
-  )
+  );
 }
-export default Main
+export default Main;
